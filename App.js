@@ -12,7 +12,7 @@ export default function App() {
       <>
       {splash ? <SplashScreen/> : 
       <View style={styles.container}>
-        <Text>Esta é a home!!</Text>
+        <Text>Esta é a home!!!</Text>
         
         </View>
         }
