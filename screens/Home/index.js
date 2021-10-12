@@ -5,7 +5,7 @@ import { StyleSheet, Text, View } from 'react-native';
 const Home = () => {
     return (
         <View style={styles.container}>
-        <Text>Esta é a home!!!</Text>
+        <Text>Esta é a home!!!!!!!</Text>
         </View>
 
     );
