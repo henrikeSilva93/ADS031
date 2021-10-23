@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "21worker",
-    "slug": "21worker",
+    "name": "filtro-service",
+    "slug": "snack-caf0d7d2-871b-4d17-8d3a-8f98839dc0c2",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -23,8 +23,7 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      },
-      "package": "oi.expo.client"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
