@@ -1,17 +1,27 @@
 import React, { useState } from "react";
 import {  View, Picker, StyleSheet, Text, TextInput, Button, Alert, Image } from 'react-native';
 
-export default function TelaFiltraServices({ navigation }) {
+export default function TelaCadastrarServices({ navigation }) {
 
   const [selectedValue, setSelectedValue] = useState("");  
   return (
     <View style={styles.container}>
-       <Text> Localizacao</Text>
+       <Text> Titulo</Text>
        <TextInput
         autoCapitalize={'none'}
         style={styles.field}
       />
-       <Text> Orcamento (R$)</Text>
+       <Text> Endereço </Text>
+       <TextInput
+        autoCapitalize={'none'}
+        style={styles.field}  
+      />
+       <Text> Descrição</Text>
+       <TextInput
+        autoCapitalize={'none'}
+        style={styles.field}
+      />
+       <Text> Orçamento (R$) </Text>
        <TextInput
         autoCapitalize={'none'}
         style={styles.field}
@@ -36,7 +46,7 @@ export default function TelaFiltraServices({ navigation }) {
       </Picker>
       <View style={styles.fixToText}>
         <Button
-          title="Filtrar"
+          title="Cadastrar Serviços"
           onPress={() => navigation.navigate('Cadastro')}
           color="#F7C302"
         />
