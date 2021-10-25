@@ -33,7 +33,7 @@ export default function TelaLogin({ navigation }) {
         />
         <Button
           title="Entrar"
-          onPress={() => navigation.navigate('home')}
+          onPress={() => navigation.navigate('Home')}
           color="#F7C302"
         />
       </View>
