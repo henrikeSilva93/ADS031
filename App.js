@@ -36,7 +36,7 @@ export default function App() {
               options={HeaderOptions}
             />
             <Stack.Screen
-              name="home"
+              name="21Worker"
               component={Home}
               options={HeaderOptions}
             />
