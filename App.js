@@ -1,9 +1,28 @@
-import React, { useState } from "react";
-import {  View, StyleSheet, Text } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
+import SplashScreen from './components/splashScreen';
+import Home from './screens/Home';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import TelaLogin from './screens/TelaLogin';
+import TelaCadastro from './screens/TelaCadastro';
 
-export default function TelaCadastrarServices({ navigation }) {
+export default function App() {
+  const Stack = createNativeStackNavigator();
+  const [splash, setSplash] = useState(true);
+  useEffect(() => {
+    setTimeout(() => setSplash(false), 3000);
+  });
 
-  const [selectedValue, setSelectedValue] = useState("");  
+  const HeaderOptions = {
+    headerStyle: {
+      backgroundColor: '#F7C302',
+    },
+    headerTitleAlign: 'center',
+    headerTitleStyle: { fontWeight: 'bold' },
+  };
+
   return (
     <>
       {splash ? (
@@ -17,7 +36,7 @@ export default function TelaCadastrarServices({ navigation }) {
               options={HeaderOptions}
             />
             <Stack.Screen
-              name="home"
+              name="21Worker"
               component={Home}
               options={HeaderOptions}
             />
@@ -30,15 +49,5 @@ export default function TelaCadastrarServices({ navigation }) {
         </NavigationContainer>
       )}
     </>
->>>>>>> main
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
-    padding: 45,
-  }
-});
