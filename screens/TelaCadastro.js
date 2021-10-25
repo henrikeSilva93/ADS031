@@ -39,7 +39,7 @@ export default function TelaCadastro({ navigation }) {
       <View style={styles.fixToText}>
         <Button
           title="Fazer Login"
-          onPress={() => navigation.navigate('lista')}
+          onPress={() => navigation.navigate('Home')}
           color="#F7C302"
         />
       </View>
