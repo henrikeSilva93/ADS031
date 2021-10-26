@@ -1,9 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { useNavigation, NavigationContainer } from '@react-navigation/native';
 
 
-const Card = () => {
+const Card = ({titulo,especialidade,orcamento,localidade}) => {
+    const navigation = useNavigation();
+
     return (
+        
         <>
       <View style={styles.container}>
        <View style={styles.card}>
@@ -14,16 +18,17 @@ const Card = () => {
         />
         </View>
         <View style={styles.cardHeader}>
-          <Text style={styles.headerTitle}>Muro 3 mts</Text>
-          <Text style={styles.headerLead}>pedreiro</Text>
+          <Text style={styles.headerTitle}>{titulo}</Text>
+          <Text style={styles.headerLead}>{especialidade}</Text>
         </View>
         <View style={styles.cardBody}>
-          <Text style={{fontSize:21, color:'#008000',fontWeight: 'bold'}}>R$ 1000</Text>
-          <Text style={{fontSize:21, fontWeight: 'bold'}}>Brasília - DF</Text>
+          <Text style={{fontSize:21, color:'#008000',fontWeight: 'bold'}}>{orcamento}</Text>
+          <Text style={{fontSize:21, fontWeight: 'bold'}}>{localidade}</Text>
         </View>
         <View>
             <TouchableOpacity
             style={styles.btn}
+            onPress={()=> navigation.navigate('detalhes',{titulo,especialidade,orcamento,localidade})}
             >
             <Text style={{fontSize:21, fontWeight: 'bold', marginLeft:110, marginTop:7}}>Ver mais</Text>
             </TouchableOpacity>

@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TelaLogin from './screens/TelaLogin';
 import TelaCadastro from './screens/TelaCadastro';
+import Detalhes from './screens/details';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -31,7 +32,7 @@ export default function App() {
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen
-              name="Faça o Login"
+              name="Login"
               component={TelaLogin}
               options={HeaderOptions}
             />
@@ -43,6 +44,11 @@ export default function App() {
             <Stack.Screen
               name="Cadastro"
               component={TelaCadastro}
+              options={HeaderOptions}
+            />
+            <Stack.Screen
+              name="detalhes"
+              component={Detalhes}
               options={HeaderOptions}
             />
           </Stack.Navigator>
