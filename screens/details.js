@@ -12,7 +12,13 @@ const Detalhes = ({navitagion, route}) => {
           <Text style={{fontSize:20, color:'#008000', fontWeight:'bold'}}>{orcamento}</Text>
           <Text style={{fontSize:20, fontWeight:'bold'}}>{localidade}</Text>
         </View>
-        <View style={{marginTop:80}}>
+        <View style={{padding:20, marginTop:60}}> 
+        <Text>
+          Procuro alguém para construção de um muro de x metros por x metros em um terreno.
+        </Text>
+
+        </View>
+        <View style={{marginTop:50}}>
         <Image
           style={styles.image}
           source={require('../assets/construcao.png')}
