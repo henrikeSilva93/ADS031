@@ -1,21 +1,19 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, Button, StyleSheet, Alert, Image,} from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  Button,
+  StyleSheet,
+  Alert,
+  Image,
+  CheckBox,
+} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { Dropdown, GroupDropdown, MultiselectDropdown,} from 'sharingan-rn-modal-dropdown';
 
 export default function TelaCadastro({ navigation }) {
-  const [valueSS, setValueSS] = useState('');
-  const onChangeSS = (value: string[]) => {setValueSS(value);};
-  const data = [ 
-    { 
-      value: '1', 
-      label: 'Prestador de serviços',
-    },
-    {
-      value: '2',
-      label: 'Contratante',
-    },
-  ];
+  const [isSelected, setSelection] = useState(false);
+  const [isSelected2, setSelection2] = useState(false);
   return (
     <View style={styles.container}>
       <Text> E-mail </Text>
@@ -36,22 +34,31 @@ export default function TelaCadastro({ navigation }) {
         secureTextEntry={true}
         style={styles.field}
       />
+      <Text> Número de Telefone</Text>
+      <TextInput keyboardType="phone-pad" style={styles.field} />
+      <View style={styles.container3}>
+        <CheckBox
+          style={styles.checkbox}
+          value={isSelected}
+          onValueChange={setSelection}
+          testID="1"
+        />
+        <Text style={styles.label}> Prestador de Serviços</Text>
+      </View>
+      <View style={styles.container3}>
+        <CheckBox
+          style={styles.checkbox}
+          value={isSelected2}
+          onValueChange={setSelection2}
+          testID="2"
+        />
+        <Text style={styles.label}> Contratante</Text>
+      </View>
       <View style={styles.fixToText}>
         <Button
           title="Fazer Login"
           onPress={() => navigation.navigate('Home')}
           color="#F7C302"
-        />
-      </View>
-      <View style={styles.container2}>
-        <Dropdown
-          label="Tipo de conta"
-          data={data}
-          value={valueSS}
-          onChange={onChangeSS}
-          required="yes"
-          rippleColor="black"
-          
         />
       </View>
     </View>
@@ -75,11 +82,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
-  container2: {
-    paddingTop: 30,
-    marginLeft: 20,
-    marginRight: 20,
-    paddingLeft: 150,
-    flex: 1,
+  container3: {
+    flexDirection: 'row',
+    marginBottom: 20,
+  },
+  checkbox: {
+    alignSelf: 'center',
+    color:"#F7C302",
+  },
+  label: {
+    margin: 8,
   },
 });

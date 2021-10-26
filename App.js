@@ -7,6 +7,9 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TelaLogin from './screens/TelaLogin';
 import TelaCadastro from './screens/TelaCadastro';
+import Detalhes from './screens/details';
+import FilterServices from './screens/filterServices';
+import CadastrarServices from './screens/CadastrarServives';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -25,13 +28,14 @@ export default function App() {
 
   return (
     <>
+    
       {splash ? (
         <SplashScreen />
       ) : (
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen
-              name="Faça o Login"
+              name="Login"
               component={TelaLogin}
               options={HeaderOptions}
             />
@@ -43,6 +47,21 @@ export default function App() {
             <Stack.Screen
               name="Cadastro"
               component={TelaCadastro}
+              options={HeaderOptions}
+            />
+            <Stack.Screen
+              name="detalhes"
+              component={Detalhes}
+              options={HeaderOptions}
+            />
+              <Stack.Screen
+              name="filterServices"
+              component={FilterServices}
+              options={HeaderOptions}
+            />
+               <Stack.Screen
+              name="CadastrarServices"
+              component={CadastrarServices}
               options={HeaderOptions}
             />
           </Stack.Navigator>
