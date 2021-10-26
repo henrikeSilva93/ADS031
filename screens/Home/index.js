@@ -8,7 +8,6 @@ const Home = ({navigation}) => {
   const [UserRole, setUserRole] = useState('prestador');
   return (
     <>
-    
   <Card
   titulo='muro 5mts'
   especialidade='pedreiro'
