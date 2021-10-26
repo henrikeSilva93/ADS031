@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, Button } from 'react-native';
 import { useNavigation, NavigationContainer } from '@react-navigation/native';
 
 
@@ -49,7 +49,7 @@ const Card = ({titulo,especialidade,orcamento,localidade}) => {
     },
     card:{
       width:320,
-      height:420,
+      height:380,
       borderColor:'#E5E5E5',
       borderRadius: 10,
       shadowColor: "#000",
@@ -71,7 +71,7 @@ const Card = ({titulo,especialidade,orcamento,localidade}) => {
       height:160
     },
     cardHeader:{
-      marginTop:55,
+      marginTop:50,
       marginLeft:90,
     },
     headerTitle:{
@@ -86,7 +86,7 @@ const Card = ({titulo,especialidade,orcamento,localidade}) => {
       flex:1,
       flexDirection: 'row',
       justifyContent: 'space-around',
-      marginTop:55
+      marginTop:40
     },
     btn:{
         backgroundColor: '#F7C302',
