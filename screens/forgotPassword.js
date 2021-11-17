@@ -14,7 +14,7 @@ import { NavigationContainer } from '@react-navigation/native';
 export default function forgotPassword({ navigation }) {
   
   const cadastro = () => {
-alert('Um email para confirmar sua recuperação foi enviado');
+alert('Um email para confirmar sua recuperação foi enviado!');
 }
 
   return (
