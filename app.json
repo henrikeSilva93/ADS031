@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "21worker",
-    "slug": "21worker",
+    "name": "cadastrar_services-",
+    "slug": "snack-bf342827-dd30-4b87-9ccf-615b5fb7c130",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -23,8 +23,7 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      },
-      "package": "oi.expo.client"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
