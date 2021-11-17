@@ -10,6 +10,7 @@ import TelaCadastro from './screens/TelaCadastro';
 import Detalhes from './screens/details';
 import FilterServices from './screens/filterServices';
 import CadastrarServices from './screens/CadastrarServives';
+import forgotPassword from './screens/forgotPassword';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
@@ -62,6 +63,11 @@ export default function App() {
                <Stack.Screen
               name="CadastrarServices"
               component={CadastrarServices}
+              options={HeaderOptions}
+            />
+               <Stack.Screen
+              name="forgotPassoword"
+              component={forgotPassword}
               options={HeaderOptions}
             />
           </Stack.Navigator>

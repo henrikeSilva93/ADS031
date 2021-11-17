@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useState } from 'react';
 import { TouchableOpacity, Text, StyleSheet} from 'react-native';
 import Card  from '../../components/card';
-import { Icon } from 'react-native-elements'
+
 
 const Home = ({navigation}) => {
   const [UserRole, setUserRole] = useState('prestador');
@@ -20,23 +20,13 @@ const Home = ({navigation}) => {
    <TouchableOpacity
    style={styles.filterButton}
    onPress={()=> navigation.navigate('CadastrarServices')}>
-     <Icon
-   name='plus'
-   type='font-awesome-5'
-   size="35"
-   style={{marginTop:30}}
- />
+  <Text>+</Text>
    </TouchableOpacity>
    :
    <TouchableOpacity
    style={styles.filterButton}
    onPress={()=> navigation.navigate('filterServices')}>
-     <Icon
-   name='filter'
-   type='font-awesome-5'
-   size="35"
-   style={{marginTop:30}}
- />
+     <Text>F</Text>
    </TouchableOpacity>
  }
   </>
