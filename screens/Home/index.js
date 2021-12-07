@@ -4,9 +4,14 @@ import { TouchableOpacity, Text, StyleSheet} from 'react-native';
 import Card  from '../../components/card';
 
 
-const Home = ({navigation}) => {
+const Home = ({navigation, route}) => {
   const [UserRole, setUserRole] = useState('prestador');
+  const [contextLoged, setContextLoged] = useState(false)
+
+
+
   return (
+    
     <>
   <Card
   titulo='muro 5mts'

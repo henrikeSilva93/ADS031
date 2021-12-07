@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -10,23 +10,74 @@ import {
   CheckBox,
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import { set } from 'react-native-reanimated';
+import firebase from '../config/firebase'
 
 export default function TelaCadastro({ navigation }) {
+
   const [isSelected, setSelection] = useState(false);
   const [isSelected2, setSelection2] = useState(false);
+  const [email, setEmail] = useState("");
+  const[senha, setSenha] = useState("");
+  const [erro, setErro] = useState(false)
+  const[mensagemErro, setMensagemErro] = useState("erro")
+  
+  
+    
+  
+  const cadastrarUsuario =() => {
+    if(email === "" || senha === ""){
+      setErro(true)
+      setMensagemErro("os campos não podem ser vazios")
+      setTimeout(() => {
+        setErro(false)
+      }, 7000);
+    }else {
+   
+    firebase.auth().createUserWithEmailAndPassword(email, senha)
+  .then((userCredential) => {
+    
+    var user = userCredential.user;
+   navigation.navigate('Home',{loged:true, email: user.email})
+
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    setErro(true)
+    setMensagemErro(errorMessage)
+    console.log("erro ao cadastrar")
+    // ..
+  });
+
+    
+}
+  }
+  useEffect(()=>{
+
+  },
+  []);
+
   return (
+    <>
+    {erro && <Text style={styles.erro}>{mensagemErro}</Text>}
+   
     <View style={styles.container}>
       <Text> E-mail </Text>
       <TextInput
         keyboardType="email-address"
         autoCapitalize={'none'}
         style={styles.field}
+        value={email}
+        onChangeText={(text)=> setEmail(text)}
       />
       <Text> Senha </Text>
       <TextInput
         keyboardType="number-pad"
         secureTextEntry={true}
         style={styles.field}
+        value={senha}
+        onChangeText={(text)=> setSenha(text)}
       />
       <Text> Repita a Senha </Text>
       <TextInput
@@ -56,12 +107,13 @@ export default function TelaCadastro({ navigation }) {
       </View>
       <View style={styles.fixToText}>
         <Button
-          title="Fazer Login"
-          onPress={() => navigation.navigate('Home')}
+          title="Cadastar"
+          onPress={() => cadastrarUsuario()}
           color="#F7C302"
         />
       </View>
     </View>
+    </>
   );
 }
 
@@ -93,4 +145,10 @@ const styles = StyleSheet.create({
   label: {
     margin: 8,
   },
+  erro:{
+    backgroundColor:'#F70A0A',
+    padding:20,
+    marginTop:50,
+    textAlign:'center'
+  }
 });
