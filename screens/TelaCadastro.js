@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import {
   View,
   Text,
@@ -12,6 +12,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { set } from 'react-native-reanimated';
 import firebase from '../config/firebase'
+import { AuthContext } from '../context/loginContext';
 
 export default function TelaCadastro({ navigation }) {
 
@@ -21,6 +22,7 @@ export default function TelaCadastro({ navigation }) {
   const[senha, setSenha] = useState("");
   const [erro, setErro] = useState(false)
   const[mensagemErro, setMensagemErro] = useState("erro")
+  const {loged, setLoged} = useContext(AuthContext)
   
   
     
@@ -36,7 +38,7 @@ export default function TelaCadastro({ navigation }) {
    
     firebase.auth().createUserWithEmailAndPassword(email, senha)
   .then((userCredential) => {
-    
+    setLoged(true)
     var user = userCredential.user;
    navigation.navigate('Home',{loged:true, email: user.email})
 
@@ -73,7 +75,7 @@ export default function TelaCadastro({ navigation }) {
       />
       <Text> Senha </Text>
       <TextInput
-        keyboardType="number-pad"
+        keyboardType="default"
         secureTextEntry={true}
         style={styles.field}
         value={senha}

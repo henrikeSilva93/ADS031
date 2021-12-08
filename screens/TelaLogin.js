@@ -63,6 +63,7 @@ export default function TelaLogin({ navigation }) {
       />
       <Text> Senha </Text>
       <TextInput
+      keyboardType="default"
         secureTextEntry={true}
         style={styles.field}
         value={senha}
