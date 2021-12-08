@@ -31,6 +31,11 @@ export default function MainNavigator(){
               component={TelaLogin}
               options={HeaderOptions}
             />
+            <Stack.Screen
+              name="TelaCadastro"
+              component={TelaCadastro}
+              options={HeaderOptions}
+            />
             </>
             ):
             (
@@ -40,11 +45,7 @@ export default function MainNavigator(){
               component={Home}
               options={HeaderOptions}
             />
-            <Stack.Screen
-              name="Cadastro"
-              component={TelaCadastro}
-              options={HeaderOptions}
-            />
+            
             <Stack.Screen
               name="detalhes"
               component={Detalhes}

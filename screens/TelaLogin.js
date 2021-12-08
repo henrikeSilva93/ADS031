@@ -63,7 +63,6 @@ export default function TelaLogin({ navigation }) {
       />
       <Text> Senha </Text>
       <TextInput
-        keyboardType="number-pad"
         secureTextEntry={true}
         style={styles.field}
         value={senha}
@@ -72,7 +71,7 @@ export default function TelaLogin({ navigation }) {
       <View style={styles.fixToText}>
         <Button
           title="Cadastro"
-          onPress={() => navigation.navigate('Cadastro')}
+          onPress={() => navigation.navigate('TelaCadastro')}
           color="#F7C302"
         />
         <Button
